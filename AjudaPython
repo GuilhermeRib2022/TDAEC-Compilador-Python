@@ -1,0 +1,78 @@
+palavras-chave:
+
+if: Utilizado para criar estruturas condicionais.
+else: Utilizado em conjunto com o "if" para fornecer uma alternativa ao bloco de código.
+elif: Abreviação de "else if", utilizado para adicionar múltiplas condições em estruturas condicionais.
+while: Utilizado para criar loops enquanto uma condição é verdadeira.
+for: Utilizado para iterar sobre uma sequência (como listas, tuplas, dicionários, etc.).
+def: Utilizado para definir uma função.
+return: Utilizado para retornar um valor de uma função.
+class: Utilizado para definir uma classe.
+try: Utilizado para iniciar um bloco de código onde exceções podem ocorrer.
+except: Utilizado em conjunto com o "try" para capturar exceções específicas.
+finally: Utilizado em conjunto com o "try" para executar código independentemente de ocorrer ou não uma exceção.
+
+
+Operadores aritméticos:
+
++: Adição.
+-: Subtração.
+*: Multiplicação.
+/: Divisão.
+%: Módulo (resto da divisão).
+**: Exponenciação.
+
+
+Operadores relacionais:
+
+==: Igualdade.
+!=: Diferente.
+<: Menor que.
+: Maior que.
+<=: Menor ou igual a.
+=: Maior ou igual a.
+
+
+Operadores booleanos:
+
+and: Retorna True se ambos os operandos forem True.
+or: Retorna True se pelo menos um dos operandos for True.
+not: Inverte o valor booleano do operando.
+
+
+Símbolos de atribuição:
+
+=: Atribui um valor a uma variável.
++=: Adiciona o valor à variável e atribui o resultado à variável.
+-=: Subtrai o valor da variável e atribui o resultado à variável.
+*=: Multiplica o valor pela variável e atribui o resultado à variável.
+/=: Divide o valor pela variável e atribui o resultado à variável.
+%=: Calcula o módulo do valor pela variável e atribui o resultado à variável.
+
+
+Símbolos identificadores de tipos de dados:
+
+int: Tipo de dado para números inteiros.
+float: Tipo de dado para números decimais (ponto flutuante).
+str: Tipo de dado para strings (cadeias de caracteres).
+list: Tipo de dado para listas.
+tuple: Tipo de dado para tuplas.
+dict: Tipo de dado para dicionários.
+bool: Tipo de dado para valores booleanos (True ou False).
+Símbolo identificador de início de bloco: :
+
+
+Palavras identificadoras de blocos:
+
+if, else, elif, while, for, def, class, try, except, finally.
+
+
+Tipos de dados:
+
+int: Números inteiros.
+float: Números decimais.
+str: Sequências de caracteres.
+list: Sequências mutáveis de elementos.
+tuple: Sequências imutáveis de elementos.
+dict: Coleções de pares chave-valor.
+bool: Valores booleanos (True ou False).
