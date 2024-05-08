@@ -10,7 +10,7 @@ identificador
     ;
 
 codigo
-    : statement*EOF
+    : stat*EOF
     ;
     
 statement
@@ -44,5 +44,5 @@ fator
     ;
     
 conditional
-    :'if' query ':' statement* ('elif' query ':' statement*)* ('else' ':' statement*)?
+    :'if' query ':' stat* ('elif' query ':' stat*)* ('else' ':' stat*)?
     ;
