@@ -9,11 +9,11 @@ identificador
     : ID
     ;
 
-codigo
+code
     : stat*EOF
     ;
     
-statement
+stat
     :(atribuicao|query|expr|conditional);
 
 atribuicao
