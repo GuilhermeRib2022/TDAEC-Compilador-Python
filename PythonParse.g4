@@ -10,7 +10,7 @@ identificador
     ;
 
 code
-    : (stat|conditional|func|func_call)*EOF
+    : (stat|conditional)*EOF
     ;
     
 stat
@@ -25,9 +25,8 @@ expr
     | numero
     | expr (OPERACAO|OP_REL|OP_BOOL) expr
     | '(' expr ')'
-	| func_call
-	| 'True'
-	| 'False'
+    | 'True'
+    | 'False'
     ;
 
 query
