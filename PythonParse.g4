@@ -10,21 +10,24 @@ identificador
     ;
 
 code
-    : stat*EOF
+    : (stat|conditional|func|func_call)*EOF
     ;
     
 stat
-    :(atribuicao|query|expr|conditional);
-
+    :(atribuicao|expr|query);
+    
 atribuicao
     : identificador '='(identificador|numero|query|expr)
     ;
-
+    
 expr
-    : numero
-    | identificador
+    : identificador
+    | numero
+    | expr (OPERACAO|OP_REL|OP_BOOL) expr
     | '(' expr ')'
-    | fator((OPERACAO|OP_REL|OP_BOOL) fator)*
+	| func_call
+	| 'True'
+	| 'False'
     ;
 
 query
@@ -34,13 +37,6 @@ query
     | '(' query ')'
     | expr OP_REL expr
     | NOT query
-    ;
-    
-fator
-    : numero
-    | identificador
-    | '(' expr ')'
-    | 'True'
     ;
     
 conditional
