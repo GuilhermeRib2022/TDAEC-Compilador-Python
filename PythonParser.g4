@@ -1,4 +1,5 @@
-parser grammar PythonParse;
+parser grammar PythonParser;
+options { tokenVocab=PythonLexer; }
 
 numero
     : INT
@@ -8,7 +9,11 @@ numero
 identificador
     : ID
     ;
-
+	
+start
+	: code ('\n' code)* EOF
+	;
+  
 code
     : (stat|conditional)*EOF
     ;

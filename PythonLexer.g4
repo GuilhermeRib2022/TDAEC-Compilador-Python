@@ -1,6 +1,7 @@
-lexer grammar ExprLexer;
+lexer grammar PythonLexer;
 
 // MINI COMPILADOR PYTHON
+LINE_BREAK: '\n';
 
 //Simbolos
 OPERACAO:'+'|'-'|'/'|'*'|'**';
