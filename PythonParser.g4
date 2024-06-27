@@ -1,5 +1,4 @@
-parser grammar PythonParser;
-options { tokenVocab=PythonLexer; }
+parser grammar PythonParse;
 
 numero
     : INT
@@ -9,13 +8,9 @@ numero
 identificador
     : ID
     ;
-	
-start
-	: code ('\n' code)* EOF
-	;
-  
+
 code
-    : (stat|conditional)*EOF
+    : (stat|conditional|func|func_call)*EOF
     ;
     
 stat
@@ -30,8 +25,9 @@ expr
     | numero
     | expr (OPERACAO|OP_REL|OP_BOOL) expr
     | '(' expr ')'
-    | 'True'
-    | 'False'
+	| func_call
+	| 'True'
+	| 'False'
     ;
 
 query
@@ -45,4 +41,24 @@ query
     
 conditional
     :'if' query ':' stat* ('elif' query ':' stat*)* ('else' ':' stat*)?
+    ;
+
+func
+    : 'def' identificador '(' parametros? ')' ':' funccode
+    ;
+    
+funccode
+    :  (stat)* 'return' expr
+    ;
+
+parametros
+    : param (',' param)*
+    ;
+
+param
+    : identificador (':' TYPE)? ('=' expr)?
+    ;
+    
+func_call
+    : identificador '(' (expr (',' expr)*)? ')'
     ;
