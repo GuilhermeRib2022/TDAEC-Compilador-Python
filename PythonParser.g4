@@ -9,46 +9,59 @@ identificador
     : ID
     ;
 
+//CODIGO
+
 code
     : (stat|conditional|func|func_call)*EOF
     ;
     
 stat
-    :(atribuicao|expr|query);
+    :(atribuicao|expr|query)(';')?;
+    
+//ATRIBUICAO
     
 atribuicao
     : identificador '='(identificador|numero|query|expr)
     ;
-    
+
+//EXPRESSOES
+
 expr
     : identificador
     | numero
     | expr (OPERACAO|OP_REL|OP_BOOL) expr
     | '(' expr ')'
 	| func_call
-	| 'True'
-	| 'False'
     ;
+    
+//QUERYS
 
 query
     : 'True' 
     | 'False'
     | query OP_BOOL query
     | '(' query ')'
+    | query OP_REL query
     | expr OP_REL expr
+    | expr OP_REL query
+    | query OP_REL expr
     | NOT query
     ;
-    
+
+//IFS
+
 conditional
-    :'if' query ':' stat* ('elif' query ':' stat*)* ('else' ':' stat*)?
+    :'if' query ':' (stat*) ('elif' query ':' stat*)* ('else' ':' stat*)?
     ;
+
+//FUNÇOES
 
 func
     : 'def' identificador '(' parametros? ')' ':' funccode
     ;
     
 funccode
-    :  (stat)* 'return' expr
+    :  (stat)* ('return' expr)
     ;
 
 parametros
