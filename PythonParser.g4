@@ -29,7 +29,7 @@ atribuicao
 expr
     : identificador
     | numero
-    | expr (OPERACAO|OP_REL|OP_BOOL) expr
+    | expr (OPERACAO|OP_BOOL) expr
     | '(' expr ')'
 	| func_call
     ;
