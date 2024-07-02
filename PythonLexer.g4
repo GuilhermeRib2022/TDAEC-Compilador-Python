@@ -51,7 +51,8 @@ CHAVETAE: '}';
 ASPAS:'"';
 
 //Estrutura básica:
+ID: [a-zA-Z_][a-zA-Z_0-9]*;
+LTR: [a-zA-Z_];
 INT: [0-9]+ ;
 FLOAT: INT?'.'INT*;
-ID: [a-zA-Z_][a-zA-Z_0-9]*;
 WS: [ \t\n\r\f]+ -> skip ;
