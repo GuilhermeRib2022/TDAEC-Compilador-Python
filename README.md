@@ -6,5 +6,5 @@ Projeto realizado por:
 - Guilherme Ribeiro 2022123762 EI
 - Rafael Valadas 2022128270 EI
 
-
+NOTA: A fase 8 está aqui mesmo que não esteja para avaliação
 
