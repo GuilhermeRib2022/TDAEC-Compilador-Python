@@ -12,11 +12,11 @@ identificador
 //CODIGO
 
 code
-    : (stat|conditional|func|func_call)*EOF
+    : (stat|func|func_call)*EOF
     ;
     
 stat
-    :(atribuicao|expr|query)(';')?;
+    :(atribuicao|expr|query|conditional)(';')?;
     
 //ATRIBUICAO
     
@@ -29,7 +29,7 @@ atribuicao
 expr
     : identificador
     | numero
-    | expr (OPERACAO|OP_BOOL) expr
+    | expr (OPERACAO|OP_REL|OP_BOOL) expr
     | '(' expr ')'
 	| func_call
     ;
