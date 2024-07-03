@@ -12,7 +12,7 @@ identificador
 //CODIGO
 
 code
-    : (stat|func|func_call)*EOF
+    : (stat|func|func_call|conditional)*EOF
     ;
     
 stat
